@@ -26,7 +26,7 @@ function preSavePageFunction (options) {
     for(var j=0; j < options.data[i]['identity-profiles'].length; j++){
       if(options.data[i]['identity-profiles'][j].identities){
         for(var k=0; k < options.data[i]['identity-profiles'][j].identities.length; k++){
-          if(!options.data[i]['identity-profiles'][j].identities[k].type == "EMAIL")
+          if(options.data[i]['identity-profiles'][j].identities[k].type != "EMAIL")
             continue;
           
           options.data[i].email = options.data[i]['identity-profiles'][j].identities[k].value;
