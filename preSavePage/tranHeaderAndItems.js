@@ -23,7 +23,7 @@ function preSavePage(options) {
       if (options.data[j]["*"] !== "*") currRec.items.push(setItem(options.data[j]));
     }
   }
-  retArr.push(currRec);
+  if (currRec.id != 0) retArr.push(currRec);
 
   return {
     data: retArr,
